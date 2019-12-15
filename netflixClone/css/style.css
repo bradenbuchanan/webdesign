@@ -1,5 +1,6 @@
 :root {
   --primary-color: #e50914;
+  --dark-color: #141414;
 }
 
 * {
@@ -46,8 +47,21 @@ img {
   background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;
 }
 
+.showcase::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, .6);
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
 .showcase-top {
   position: relative;
+  z-index: 2;
   height: 90px;
 }
 
@@ -57,6 +71,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-left: 0;
 }
 
 .showcase-top a {
@@ -68,6 +83,8 @@ img {
 
 .showcase-content {
   position: relative;
+  z-index: 2;
+  width: 65%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -75,6 +92,64 @@ img {
   align-content: center;
   text-align: center;
   margin-top: 9rem;
+}
+
+.showcase-content h1 {
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+
+.showcase-content p {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+/* Tabs */
+.tabs {
+  background: var(--dark-color);
+  padding-top: 1rem;
+  border-bottom: 3px solid #3d3d3d;
+}
+
+.tabs .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Containers */
+.container {
+  max-width: 70%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.tabs p {
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+.tabs .container>div {
+  padding: 1.5rem 0;
+}
+
+.tabs .container>div:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.tab-border {
+  border-bottom: var(--primary-color) 4px solid;
 }
 
 /* Buttons */
@@ -109,6 +184,6 @@ img {
 
 .btn-lg {
   font-size: 1rem;
-  padding: .0rem 1.3rem;
+  padding: .08rem 1.3rem;
   text-transform: uppercase;
 }
